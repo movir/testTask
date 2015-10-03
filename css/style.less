@@ -1,0 +1,64 @@
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.box-shadow (@x: 0px, @y: 0px, @blur: 3px, @alpha: 0.2) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+//-------
+.container {
+    padding-top:25px;
+}
+.form {
+    legend {
+        border: none;
+        margin-bottom: 10px;
+    }
+    fieldset {
+        .border-radius (30px);
+        .box-shadow();
+        padding: 15px 15px 0 15px;
+        background-color: #f9f9f9;
+
+        input[type=number] {-moz-appearance: textfield;}
+        ::-webkit-inner-spin-button { -webkit-appearance: none;}
+        ::-webkit-outer-spin-button { -webkit-appearance: none;}
+
+        .help-block {
+            position: absolute;
+        }
+    }
+
+}
+
+.empl-table {
+    margin-top: 50px;
+    table {
+        .box-shadow();
+        thead th {
+            text-align: center;
+            &:first-child {
+                width: 50px;
+            }
+            &.actions {
+                width: 150px;
+            }
+            .sorting {
+                cursor: pointer;
+            }
+        }
+        tbody td {
+            &:first-child {
+                text-align: center;
+            }
+            &.actions {
+                text-align: center;
+            }
+        }
+    }
+}
